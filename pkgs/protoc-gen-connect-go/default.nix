@@ -2,17 +2,14 @@
   lib,
   buildGoModule,
   fetchFromGitHub,
-
-  version ? "1.16.2",
-  hash ? "sha256-Ej8ya2sKtRVRQdMr63YpPbqzwtV0ZsqO+7xiif3gFr0=",
 }:
 
 buildGoModule rec {
-  inherit version;
   pname = "protoc-gen-connect-go";
+  version = "1.16.2";
 
   src = fetchFromGitHub {
-    inherit hash;
+    hash = "sha256-Ej8ya2sKtRVRQdMr63YpPbqzwtV0ZsqO+7xiif3gFr0=";
     owner = "connectrpc";
     repo = "connect-go";
     rev = "v${version}";
