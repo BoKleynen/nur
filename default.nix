@@ -6,7 +6,9 @@
 # commands such as:
 #     nix-build -A mypackage
 
-{ pkgs ? import <nixpkgs> { } }:
+{
+  pkgs ? import <nixpkgs> { },
+}:
 
 {
   # The `lib`, `modules`, and `overlays` names are special
@@ -14,5 +16,6 @@
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
-  protoc-gen-connect-go = pkgs.callPackage ./pkgs/protoc-gen-connect-go {};
+  arcanist = pkgs.callPackage ./pkgs/arcanist { };
+  protoc-gen-connect-go = pkgs.callPackage ./pkgs/protoc-gen-connect-go { };
 }
