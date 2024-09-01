@@ -17,5 +17,4 @@
   overlays = import ./overlays; # nixpkgs overlays
 
   arcanist = pkgs.callPackage ./pkgs/arcanist { };
-  protoc-gen-connect-go = pkgs.callPackage ./pkgs/protoc-gen-connect-go { };
 }
